@@ -118,22 +118,14 @@ void initSoils(){
     for (int j = 0; j < soilHealth[i].length; j++) {
        // 0: no soil, 15: soil only, 30: 1 stone, 45: 2 stones
       float randRes = random(SOIL_COL_COUNT - i);
-
       if(randRes < emptyGridCount[j]){
-
         soilHealth[i][j] = 0;
         emptyGridCount[j] --;
-
       }else{
-
         soilHealth[i][j] = 15;
-
         if(j < 8){
-
           if(j == i) soilHealth[i][j] = 2 * 15;
-
         }else if(j < 16){
-
           int offsetJ = j - 8;
           if(offsetJ == 0 || offsetJ == 3 || offsetJ == 4 || offsetJ == 7){
             if(i == 1 || i == 2 || i == 5 || i == 6){
@@ -144,13 +136,10 @@ void initSoils(){
               soilHealth[i][j] = 2 * 15;
             }
           }
-
         }else{
-
           int offsetJ = j - 16;
           int stoneCount = (offsetJ + i) % 3;
           soilHealth[i][j] = (stoneCount + 1) * 15;
-
         }
       }
     }
