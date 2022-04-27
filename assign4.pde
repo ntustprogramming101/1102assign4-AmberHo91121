@@ -460,29 +460,8 @@ void draw() {
       image(restartHovered, START_BUTTON_X, START_BUTTON_Y);
       if(mousePressed){
         gameState = GAME_RUN;
+        setup();
         mousePressed = false;
-
-        // Initialize player
-        playerX = PLAYER_INIT_X;
-        playerY = PLAYER_INIT_Y;
-        playerCol = (int) (playerX / SOIL_SIZE);
-        playerRow = (int) (playerY / SOIL_SIZE);
-        playerMoveTimer = 0;
-        playerHealth = 2;
-
-        // Initialize soilHealth
-        soilHealth = new int[SOIL_COL_COUNT][SOIL_ROW_COUNT];
-        for(int i = 0; i < soilHealth.length; i++){
-          for (int j = 0; j < soilHealth[i].length; j++) {
-             // 0: no soil, 15: soil only, 30: 1 stone, 45: 2 stones
-            soilHealth[i][j] = 15;
-          }
-        }
-
-        // Initialize soidiers and their position
-
-        // Initialize cabbages and their position
-        
       }
 
     }else{
