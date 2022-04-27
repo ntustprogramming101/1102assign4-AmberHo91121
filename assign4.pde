@@ -111,7 +111,7 @@ void initSoils(){
   int[] emptyGridCount = new int[SOIL_ROW_COUNT];
 
   for(int j = 0; j < SOIL_ROW_COUNT; j++){
-    emptyGridCount[j] = ( j == 0 ) ? 0 : floor(random(1, 3));
+    emptyGridCount[j] = ( j == 0 ) ? 0 : floor(random(0, 3));
   }
 
   for(int i = 0; i < soilHealth.length; i++){
