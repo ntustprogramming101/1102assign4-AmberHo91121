@@ -372,7 +372,7 @@ void draw() {
     }
 
     image(groundhogDisplay, playerX, playerY);
-    println(playerY);
+    //println(playerY);
 
     // If player is now moving?
 
