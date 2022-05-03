@@ -372,6 +372,7 @@ void draw() {
     }
 
     image(groundhogDisplay, playerX, playerY);
+    println(playerY);
 
     // If player is now moving?
 
@@ -394,7 +395,7 @@ void draw() {
           playerCol++;
           playerX = SOIL_SIZE * playerCol;
         }else{
-          playerX = (1f - float(playerMoveTimer) / playerMoveDuration + playerCol) * SOIL_SIZE;
+          playerX = floor((1f - float(playerMoveTimer) / playerMoveDuration + playerCol) * SOIL_SIZE);
         }
         break;
 
@@ -402,7 +403,7 @@ void draw() {
         if(playerMoveTimer == 0){
           playerRow++;
         }else{
-          playerY = (1f - float(playerMoveTimer) / playerMoveDuration + playerRow) * SOIL_SIZE;
+          playerY = floor((1f - float(playerMoveTimer) / playerMoveDuration + playerRow) * SOIL_SIZE)+1+5;
         }
         break;
       }
@@ -423,6 +424,7 @@ void draw() {
         && soldierX[i] < playerX + SOIL_SIZE    // r1 left edge past r2 right
         && soldierY[i] + SOIL_SIZE > playerY    // r1 top edge past r2 bottom
         && soldierY[i] < playerY + SOIL_SIZE) { // r1 bottom edge past r2 top
+        println(soldierY[i]);
 
         playerHealth --;
         initSoils();
